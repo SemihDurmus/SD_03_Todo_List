@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
 body {
   margin: 0;
   min-width: 250px;
+}
+
+h2 {
+  font-family: 'Acme', sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
 }
 
 /* Include the padding and border in an element's total width and height */
@@ -21,8 +29,10 @@ ul li {
   padding: 12px 8px 12px 40px;
   list-style-type: none;
   background: #eee;
-  font-size: 18px;
+  font-size: 14px;
   transition: 0.2s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 
   /* make the list items unselectable */
   -webkit-user-select: none;
@@ -71,13 +81,14 @@ ul li.checked::before {
 }
 
 .close:hover {
-  background-color: #f44336;
+  background-color: #2ecc71;
   color: white;
 }
 
 /* Style the header */
 .header {
-  background-color: #f44336;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   padding: 30px 40px;
   color: white;
   text-align: center;
@@ -98,7 +109,8 @@ input {
   width: 75%;
   padding: 10px;
   float: left;
-  font-size: 16px;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Style the "Add" button */
@@ -109,10 +121,11 @@ input {
   color: #555;
   float: left;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .addBtn:hover {

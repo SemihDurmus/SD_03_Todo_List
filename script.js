@@ -26,7 +26,8 @@ function addTodo() {
 }
 
 
-//------CHANGING THE isDone VALUE TO TRUE WHEN THE ELEMENT IS CLICKED----
+//------CHANGING THE isDone VALUE TO TRUE WHEN THE ELEMENT IS CLICKED
+//------OR TO FALSE IF IT WAS TRUE BEFORE
 function doneTodo(todoId) {
   const selectedTodoIndex = todoList.findIndex((item) => item.id == todoId);
   if (todoList[selectedTodoIndex].isDone == true) {
