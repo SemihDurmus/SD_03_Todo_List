@@ -73,14 +73,14 @@ ul li.checked::before {
 }
 
 /* Style the close button */
-.close {
+.far {
   position: absolute;
   right: 0;
   top: 0;
   padding: 12px 16px 12px 16px;
 }
 
-.close:hover {
+.far:hover {
   background-color: tomato;
   color: white;
 }
