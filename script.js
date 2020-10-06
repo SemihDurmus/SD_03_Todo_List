@@ -4,7 +4,7 @@ const todoList = [];
 
 const todoListElement = document.querySelector("#myUL");
 
-document.querySelector("#todo_button").addEventListener("click", addTodo);
+document.querySelector("#add_button").addEventListener("click", addTodo);
 document.querySelector("#myInput").addEventListener("keydown", function(e) {
   if (e.keyCode == 13) {
     addTodo()
