@@ -5,6 +5,11 @@ const todoList = [];
 const todoListElement = document.querySelector("#myUL");
 
 document.querySelector("#todo_button").addEventListener("click", addTodo);
+document.querySelector("#myInput").addEventListener("keydown", function(e) {
+  if (e.keyCode == 13) {
+    addTodo()
+  }
+});
 
 //-------GETTING VALUES FROM INPUT TO ARRAY OF OBJECTS-------
 function addTodo() {
@@ -30,23 +35,21 @@ function addTodo() {
 //------OR TO FALSE IF IT WAS TRUE BEFORE
 function doneTodo(todoId) {
   const selectedTodoIndex = todoList.findIndex((item) => item.id == todoId);
-  if (todoList[selectedTodoIndex].isDone == true) {
-    todoList[selectedTodoIndex].isDone = false;
-  } else {
-    todoList[selectedTodoIndex].isDone = true;
-  }
 
+  todoList[selectedTodoIndex].isDone
+    ? (todoList[selectedTodoIndex].isDone = false)
+    : (todoList[selectedTodoIndex].isDone = true);
   displayTodos();
 }
 
-//----TO DELETE AN ITE; FROM THE LIST
+//----TO DELETE AN ITEM; FROM THE LIST
 function deleteItem(x) {
-  todoList.splice(todoList.findIndex((item) => item.id == x), 1);
+  todoList.splice(
+    todoList.findIndex((item) => item.id == x),
+    1
+  );
   displayTodos();
 }
-
-
-
 
 //---------DISPLAYING THE ENTERED ITEMS ON THE SCREEN------
 function displayTodos() {
@@ -71,12 +74,12 @@ function displayTodos() {
 
     listElement.addEventListener("click", function (e) {
       const selectedId = e.target.getAttribute("data-id");
-      doneTodo(selectedId); 
+      doneTodo(selectedId);
     });
 
     delBtn.addEventListener("click", function (e) {
       const delId = e.target.getAttribute("data-id");
-      deleteItem(delId); 
+      deleteItem(delId);
     });
 
     todoListElement.appendChild(listElement);
