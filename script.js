@@ -11,18 +11,20 @@ document.querySelector("#todo_button").addEventListener("click", addTodo);
 function addTodo() {
   const todoText = document.querySelector("#myInput").value;
 
-  if (todoText == "") alert("You did not enter any item");
-
-  const todoObject = {
+  if (todoText == "") {alert("You did not enter any item");
+ } else {
+    const todoObject = {
     id: todoList.length,
     todoText: todoText,
     isDone: false,
   };
 
-//---WITH UNSHIFT WE ADD THE NEW ELEMENT TO THE BEGINNING OF THE ARRAY
-//--SO THAT THE NEW ITEMS SHOW UP ON TOP
+
+  //---WITH UNSHIFT WE ADD THE NEW ELEMENT TO THE BEGINNING OF THE ARRAY
+  //--SO THAT THE NEW ITEMS SHOW UP ON TOP
   todoList.unshift(todoObject);
   displayTodos();
+ }
 }
 
 
