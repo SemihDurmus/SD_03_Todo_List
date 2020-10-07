@@ -1,8 +1,10 @@
 const todoObjectList = [];
 
+
+
 class Todo_Class {
-    constructor(x){
-        this.ulElement =x;
+    constructor(item){
+        this.ulElement =item;
     } 
 
     add() {
@@ -27,13 +29,11 @@ class Todo_Class {
         const selectedTodoIndex = todoObjectList.findIndex((item)=> item.id == x);
         console.log(todoObjectList[selectedTodoIndex].isDone);
         todoObjectList[selectedTodoIndex].isDone == false ? todoObjectList[selectedTodoIndex].isDone = true : todoObjectList[selectedTodoIndex].isDone = false;
-        console.log(todoObjectList[selectedTodoIndex].isDone);
-
         this.display();
     }
 
-    deleteElement(x) {
-        const selectedDelIndex = todoObjectList.findIndex((item)=> item.id == x);
+    deleteElement(z) {
+        const selectedDelIndex = todoObjectList.findIndex((item)=> item.id == z);
 
         todoObjectList.splice(selectedDelIndex,1);
 
@@ -53,8 +53,7 @@ class Todo_Class {
             liElement.setAttribute("data-id", object_item.id);
 
             delBtn.setAttribute("data-id", object_item.id);
-            delBtn.classList.add("far");
-            delBtn.classList.add("fa-trash-alt");
+            delBtn.classList.add("far", "fa-trash-alt");
 
             liElement.appendChild(delBtn);
             
@@ -74,9 +73,9 @@ class Todo_Class {
 
             this.ulElement.appendChild(liElement);
         })
-
     }
 } 
+
 
 
 
@@ -95,3 +94,5 @@ document.querySelector("#myInput").addEventListener("keydown", function(e) {
         myTodoList.add()
     }
 })
+
+
